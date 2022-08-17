@@ -1,0 +1,64 @@
+.tw-daisy-btn:hover {
+    color: white;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.tw-daisy-dropdown:hover #login {
+    content: url("../public/images/login_white.png");
+}
+
+#login {
+    height: 10%;
+}
+
+#logo:hover {
+    margin-left: 6.5px;
+    margin-right: 6.5px;
+    content: url('../public/images/logo_bottom_text.png');
+    animation: 500ms fadein;
+    background-color: transparent;
+    height: 100px;
+    transition: height 750ms ease;
+    transition-delay: 500ms;
+}
+
+#logo:not(:hover) {
+    animation: 1s fadeout;
+    transition: height 750ms ease;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #09090B;
+}
+
+::-webkit-scrollbar-thumb {
+    background: gold;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}

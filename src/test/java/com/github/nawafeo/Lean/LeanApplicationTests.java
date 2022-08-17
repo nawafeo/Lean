@@ -1,10 +1,10 @@
-package com.github.nawafeo.Workout_and_Diet_Planner;
+package com.github.nawafeo.Lean;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class WorkoutAndDietPlannerApplicationTests {
+class LeanApplicationTests {
 
 	@Test
 	void contextLoads() {

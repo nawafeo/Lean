@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.nawafeo</groupId>
-	<artifactId>Workout_and_Diet_Planner</artifactId>
+	<artifactId>Lean</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Workout_and_Diet_Planner</name>
-	<description>Workout and Diet Planner built with React, Java with Spring MVC and Spring Boot, and MongoDB</description>
+	<name>Lean</name>
+	<description>Lean; a workout and diet planner built with React and Tailwind/DaisyUI, Java with Spring Boot, and MongoDB</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
