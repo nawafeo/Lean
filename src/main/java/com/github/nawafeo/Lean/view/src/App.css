@@ -1,18 +1,18 @@
-.tw-daisy-btn:hover {
+.nav-btn:hover {
     color: white;
     background-color: transparent;
     border-color: transparent;
 }
 
-.tw-daisy-dropdown:hover #login {
-    content: url("../public/images/login_white.png");
+#nav-menu:hover #menuIMG {
+    content: url('../public/images/nav_menu_white.png');
 }
 
-#login {
+#menuIMG {
     height: 10%;
 }
 
-#logo:hover {
+#nav-logo:hover {;
     margin-left: 6.5px;
     margin-right: 6.5px;
     content: url('../public/images/logo_bottom_text.png');
@@ -23,7 +23,7 @@
     transition-delay: 500ms;
 }
 
-#logo:not(:hover) {
+#nav-logo:not(:hover) {
     animation: 1s fadeout;
     transition: height 750ms ease;
 }
