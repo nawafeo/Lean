@@ -1,0 +1,71 @@
+version: "3.8"
+services:
+  front-end:
+    build:
+      context: front-end
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+#      - 443:443
+#    volumes:
+#      - ./certbot/www/:/var/www/certbot/:ro
+#      - ./certbot/conf/:/etc/letsencrypt/:ro
+    depends_on:
+      - back-end
+  back-end:
+    build:
+      context: back-end
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - MONGO_USERNAME=${MONGO_USERNAME}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MAIL_USERNAME=${MAIL_USERNAME}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - data:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_USERNAME}
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_PASSWORD}
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+#  ssl:
+#    image: certbot/certbot:latest
+#    volumes:
+#      - ./certbot/www/:/var/www/certbot/:rw
+#      - ./certbot/conf/:/etc/letsencrypt/:rw
+#    depends_on:
+#      - front-end
+#    command:
+#      - renew
+#      - certonly
+#      - --webroot
+#      - -w
+#      - /var/www/certbot
+#      - --email=lean.wdp@gmail.com
+#      - --agree-tos
+#      - --no-eff-email
+#      - -d
+#      - localhost
+volumes:
+  data: {}
+
+networks:
+  default:
+    name: mongodb_network
