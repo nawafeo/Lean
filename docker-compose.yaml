@@ -63,6 +63,8 @@ services:
 #      - --no-eff-email
 #      - -d
 #      - localhost
+    depends_on:
+      - mongodb
 volumes:
   data: {}
 
